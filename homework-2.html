@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <style>
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        color: #1964d6;
+
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 48px;
+        margin: 0 auto;
+      }
+      h2 {
+        font-size: 34px;
+        font-weight: 400;
+        line-height: 48px;
+        margin: 0 auto;
+      }
+      ul {
+        list-style-type: none;
+        text-align: center;
+        transition: ease-in-out;
+        display: block;
+        padding: 0;
+      }
+      li {
+        padding: 10px 0;
+        text-align: center;
+        border-radius: 10px;
+        border: 10px;
+        margin: 0 auto;
+        transition: all 200ms ease-in-out;
+        max-width: 400px;
+      }
+      li:hover {
+        background: radial-gradient(
+          circle at 7.4% 45.1%,
+          rgb(236, 206, 251) 0%,
+          rgb(205, 237, 246) 45.1%,
+          rgb(227, 251, 252) 78.4%,
+          rgb(230, 247, 235) 90%
+        );
+        transition: all 200ms ease-in-out;
+      }
+      h3 {
+        font-size: 19px;
+        display: block;
+        font-weight: bold;
+      }
+      p {
+        font-size: 18px;
+        font-family: monospace;
+        font-weight: 400;
+        opacity: 0.7;
+        color: #4c4c4c;
+        text-align: center;
+      }
+      button {
+        display: block;
+        font-size: 16px;
+        line-height: 22px;
+        color: white;
+        background: #1964d6;
+        border: 1px solid #1964d6;
+        border-radius: 30px;
+        margin: 20px auto;
+        padding: 16px 24px;
+        font-weight: 400;
+        box-shadow: rgb(25, 100, 214, 0.08);
+        transition: all 200ms ease-in-out;
+        cursor: pointer;
+      }
+      button:hover {
+        color: #1964d6;
+        background-color: white;
+        border: 1px solid #1964d6;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>
+        🌤️
+        <br />
+        Currently 18° in Nairobi
+      </h1>
+      <h2>13° / <strong> 23° </strong></h2>
+      <ul>
+        <li>
+          <h3>🌧Tomorrow</h3>
+          <p>16° /<strong> 24°</strong></p>
+        </li>
+        <li>
+          <h3>🌥 Sunday</h3>
+          <p>17° / <strong> 25°</strong></p>
+        </li>
+        <li>
+          <h3>☀️ Monday</h3>
+          <p>17° / <strong>25°</strong></p>
+        </li>
+      </ul>
+      <button>Change city</button>
+      <p>Coded by Kaltuma Abdikani Omar</p>
+
+      <script>
+        function changeCity() {
+          let city = prompt("What city do you live in?");
+          let temperature = prompt("What temperature is it?");
+
+          let sentence = "Currently " + temperature + "°C in " + city;
+
+          let heading = document.querySelector("h1");
+
+          if (temperature >= 0) {
+            heading.innerHTML = " 🌞 <br>" + sentence;
+          } else {
+            heading.innerHTML = " 🤕 <br>" + sentence;
+          }
+        }
+
+        let change = document.querySelector("button");
+        change.addEventListener("click", changeCity);
+      </script>
+    </div>
+  </body>
+</html>
